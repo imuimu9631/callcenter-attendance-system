@@ -1,0 +1,224 @@
+{
+  "exportInfo": {
+    "exportDate": "2025-06-15T03:14:00.000Z",
+    "systemName": "コールセンター勤怠管理システム",
+    "version": "1.0.0",
+    "description": "QRコード打刻機能付きモダン勤怠管理システム"
+  },
+  "users": [
+    {
+      "id": "CC001",
+      "name": "管理者",
+      "employeeId": "CC001",
+      "password": "admin123",
+      "role": "admin",
+      "department": "管理部",
+      "hourlyRate": 2000,
+      "isActive": true,
+      "createdAt": "2025-06-15T00:00:00.000Z"
+    },
+    {
+      "id": "CC002",
+      "name": "オペレーター田中",
+      "employeeId": "CC002",
+      "password": "password123",
+      "role": "operator",
+      "department": "カスタマーサービス",
+      "hourlyRate": 1200,
+      "isActive": true,
+      "createdAt": "2025-06-15T00:00:00.000Z"
+    },
+    {
+      "id": "CC003",
+      "name": "オペレーター佐藤",
+      "employeeId": "CC003",
+      "password": "password123",
+      "role": "operator",
+      "department": "カスタマーサービス",
+      "hourlyRate": 1150,
+      "isActive": true,
+      "createdAt": "2025-06-15T00:00:00.000Z"
+    },
+    {
+      "id": "CC004",
+      "name": "オペレーター鈴木",
+      "employeeId": "CC004",
+      "password": "password123",
+      "role": "operator",
+      "department": "テクニカルサポート",
+      "hourlyRate": 1300,
+      "isActive": true,
+      "createdAt": "2025-06-15T00:00:00.000Z"
+    },
+    {
+      "id": "CC005",
+      "name": "オペレーター山田",
+      "employeeId": "CC005",
+      "password": "password123",
+      "role": "operator",
+      "department": "セールスサポート",
+      "hourlyRate": 1250,
+      "isActive": true,
+      "createdAt": "2025-06-15T00:00:00.000Z"
+    }
+  ],
+  "attendanceRecords": [
+    {
+      "id": "record_001",
+      "employeeId": "CC002",
+      "date": "2025-06-14",
+      "clockIn": "2025-06-14T09:00:00.000Z",
+      "clockOut": "2025-06-14T18:00:00.000Z",
+      "breaks": [
+        {
+          "startTime": "2025-06-14T12:00:00.000Z",
+          "endTime": "2025-06-14T13:00:00.000Z"
+        }
+      ],
+      "totalWorkTime": 8.0,
+      "status": "completed",
+      "method": "qr_code"
+    },
+    {
+      "id": "record_002",
+      "employeeId": "CC003",
+      "date": "2025-06-14",
+      "clockIn": "2025-06-14T09:15:00.000Z",
+      "clockOut": "2025-06-14T18:15:00.000Z",
+      "breaks": [
+        {
+          "startTime": "2025-06-14T12:30:00.000Z",
+          "endTime": "2025-06-14T13:30:00.000Z"
+        }
+      ],
+      "totalWorkTime": 8.0,
+      "status": "completed",
+      "method": "qr_code"
+    },
+    {
+      "id": "record_003",
+      "employeeId": "CC004",
+      "date": "2025-06-14",
+      "clockIn": "2025-06-14T10:00:00.000Z",
+      "clockOut": "2025-06-14T19:00:00.000Z",
+      "breaks": [
+        {
+          "startTime": "2025-06-14T13:00:00.000Z",
+          "endTime": "2025-06-14T14:00:00.000Z"
+        }
+      ],
+      "totalWorkTime": 8.0,
+      "status": "completed",
+      "method": "qr_code"
+    }
+  ],
+  "systemSettings": {
+    "qrCodeSettings": {
+      "validityDuration": 300000,
+      "secretKey": "CALLCENTER_SECRET_2025",
+      "allowedActions": ["clockIn", "clockOut", "startBreak", "endBreak"]
+    },
+    "workingHours": {
+      "standardWorkDay": 8,
+      "breakTime": 1,
+      "overtimeThreshold": 8
+    },
+    "ui": {
+      "theme": "dark",
+      "language": "ja",
+      "animations": true,
+      "glassmorphism": true
+    },
+    "security": {
+      "sessionTimeout": 3600000,
+      "passwordMinLength": 8,
+      "maxLoginAttempts": 5
+    }
+  },
+  "features": {
+    "qrCodeAttendance": {
+      "enabled": true,
+      "timeLimit": "5分間",
+      "securityValidation": true,
+      "cameraAccess": true
+    },
+    "salaryCalculation": {
+      "enabled": true,
+      "adminOnly": true,
+      "hourlyRateManagement": true,
+      "overtimeCalculation": false
+    },
+    "modernUI": {
+      "enabled": true,
+      "darkTheme": true,
+      "gradients": true,
+      "animations": true,
+      "responsiveDesign": true
+    },
+    "realTimeTracking": {
+      "enabled": true,
+      "statusDisplay": true,
+      "workingTimeCounter": true
+    }
+  },
+  "departments": [
+    {
+      "id": "dept_001",
+      "name": "管理部",
+      "description": "システム管理・人事管理"
+    },
+    {
+      "id": "dept_002", 
+      "name": "カスタマーサービス",
+      "description": "顧客対応・問い合わせ処理"
+    },
+    {
+      "id": "dept_003",
+      "name": "テクニカルサポート",
+      "description": "技術的な問い合わせ対応"
+    },
+    {
+      "id": "dept_004",
+      "name": "セールスサポート",
+      "description": "営業支援・受注処理"
+    }
+  ],
+  "technicalInfo": {
+    "framework": "React 18",
+    "buildTool": "Vite",
+    "styling": "Tailwind CSS",
+    "qrLibraries": ["qrcode", "qr-scanner"],
+    "dateLibrary": "date-fns",
+    "icons": "lucide-react",
+    "stateManagement": "React Context API",
+    "storage": "localStorage",
+    "deployment": "Development Server",
+    "browser": "Modern browsers with camera support"
+  },
+  "apiEndpoints": {
+    "note": "現在はフロントエンドのみの実装。将来的にはバックエンドAPI連携が可能",
+    "plannedEndpoints": [
+      "POST /api/auth/login",
+      "POST /api/attendance/clock-in",
+      "POST /api/attendance/clock-out", 
+      "POST /api/qr/generate",
+      "GET /api/attendance/records",
+      "GET /api/employees",
+      "GET /api/salary/calculate"
+    ]
+  },
+  "usage": {
+    "startup": "npm run dev または npm run preview",
+    "access": "http://localhost:3000/",
+    "login": {
+      "admin": { "id": "CC001", "password": "admin123" },
+      "operator": { "id": "CC002", "password": "password123" }
+    },
+    "qrWorkflow": [
+      "1. 管理者がQRコード生成",
+      "2. オペレーターがQRスキャナー起動", 
+      "3. QRコードをスキャン",
+      "4. 自動打刻完了"
+    ]
+  }
+}
